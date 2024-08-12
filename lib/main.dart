@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
               height: 60,
               alignment: Alignment.center,
               child: const Text(
-                "my title",
+                "my title Text",
                 style: TextStyle(color: Colors.white),
               ),
             ),
