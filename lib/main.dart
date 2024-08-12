@@ -11,20 +11,22 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Column(
-          children: [
-            Container(
-              width: double.infinity,
-              color: Colors.red,
-              height: 60,
-              alignment: Alignment.center,
-              child: const Text(
-                "my title Text",
-                style: TextStyle(color: Colors.white),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                width: double.infinity,
+                color: Colors.red,
+                height: 60,
+                alignment: Alignment.center,
+                child: const Text(
+                  "my title Text",
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
-            ),
-            Expanded(
-              child: ListView.separated(
+              ListView.separated(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) => Container(
                   height: 200,
                   color: Colors.blueGrey,
@@ -34,8 +36,8 @@ class MyApp extends StatelessWidget {
                 ),
                 itemCount: 13,
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
